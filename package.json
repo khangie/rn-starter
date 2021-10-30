@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/ngrok": "^2.5.0",
     "@react-native-community/masked-view": "0.1.10",
     "expo": "~41.0.1",
     "expo-cli": "^4.12.10",
