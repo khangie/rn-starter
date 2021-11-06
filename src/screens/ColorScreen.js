@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, FlatList } from 'react-native';
 
 const ColorScreen = () => {
 
@@ -9,11 +9,23 @@ const ColorScreen = () => {
     // The ... function makes a copy of the colors array then adds the value of randomRgb() to it
     return (
         <View>
-            <Button title="Add a Color" onPress={() => {
+            <Button title="Add a Color " onPress={() => {
                 setColors([...colors, randomRgb()])
             }} />
             <View 
                 style={{ height: 100, width: 100, backgroundColor: randomRgb() }}
+            />
+            <FlatList
+                keyExtractor={(item) => item}
+                data={colors}
+                renderItem={
+                    ({item}) => {
+                        return (
+                            <View 
+                            style={{ height: 100, width: 100, backgroundColor: item }}
+                        />
+                    );
+                }}
             />
         </View>
 
